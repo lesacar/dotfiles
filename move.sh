@@ -1,27 +1,36 @@
 #!/bin/bash
 
 mkdir -pv ~/.local
-# cp -rv bin ~/.local/bin
-ln -s ~/.dotfiles/bin ~/.local/
 
-ln -s ~/.dotfiles/nvim ~/.config/nvim
-ln -s ~/.dotfiles/i3 ~/.config/i3 
-ln -s ~/.dotfiles/i3blocks ~/.config/i3blocks 
-ln -s ~/.dotfiles/sway ~/.config/sway 
-ln -s ~/.dotfiles/picom ~/.config/picom 
-ln -s ~/.dotfiles/clangd ~/.config/clangd 
-ln -s ~/.dotfiles/htop ~/.config/htop 
-ln -s ~/.dotfiles/mpv ~/.config/mpv 
-ln -s ~/.dotfiles/dunst ~/.config/dunst 
-ln -s ~/.dotfiles/mako ~/.config/mako 
+create_symlink() {
+  local target=$1
+  local link_name=$2
 
-# cp -rv nvim ~/.config/
-# cp -rv i3 ~/.config/
-# cp -rv i3blocks ~/.config/
-# cp -rv sway ~/.config/
-# cp -rv picom ~/.config/
-# cp -rv clangd ~/.config/
-# cp -rv htop ~/.config/
-# cp -rv mpv ~/.config/
-# cp -rv dunst ~/.config/
-# cp -rv mako ~/.config/
+  if [ -e "$link_name" ]; then
+    if [ -L "$link_name" ]; then
+      if [ "$(readlink "$link_name")" != "$target" ]; then
+        echo "Symlink $link_name already exists but points to a different target. Skipping..."
+      else
+        echo "Symlink $link_name already exists and points to the correct target."
+      fi
+    else
+      echo "$link_name exists and is not a symlink. Skipping..."
+    fi
+  else
+    ln -s "$target" "$link_name"
+    echo "Created symlink $link_name -> $target"
+  fi
+}
+
+# Create symlinks with proper checks
+create_symlink ~/.dotfiles/nvim ~/.config/nvim
+create_symlink ~/.dotfiles/i3 ~/.config/i3
+create_symlink ~/.dotfiles/i3blocks ~/.config/i3blocks
+create_symlink ~/.dotfiles/sway ~/.config/sway
+create_symlink ~/.dotfiles/picom ~/.config/picom
+create_symlink ~/.dotfiles/clangd ~/.config/clangd
+create_symlink ~/.dotfiles/htop ~/.config/htop
+create_symlink ~/.dotfiles/mpv ~/.config/mpv
+create_symlink ~/.dotfiles/dunst ~/.config/dunst
+create_symlink ~/.dotfiles/mako ~/.config/mako
+create_symlink ~/.dotfiles/bin ~/.local/bin
