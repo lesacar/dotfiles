@@ -1,3 +1,0 @@
-#!/bin/sh 
-id="$(xinput list | grep "ALPS DualPoint Stick" | awk '{ print $7 }' | sed 's/id=//g')"
-xinput disable $id
