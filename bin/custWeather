@@ -1,7 +1,8 @@
 #! /bin/bash
-temp=$(curl -s -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" https://www.accuweather.com/hr/hr/split/121161/current-weather/121161 | grep -A 2 "class=\"temperature\"" | head -2 | tail -1 | tr -d '[:blank:]' | cut -c 1-2)
+set -x
+temp=$(curl -s -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" https://www.accuweather.com/hr/hr/split/121161/current-weather/121161 | grep -A 2 "class=\"display-temp\"" | head -1 | tail -1 | tr -d '[:blank:]' | cut -c 26-27)
 temp+="°C"
-# state=$(curl -s -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" https://www.accuweather.com/en/hr/split/121161/current-weather/121161 | grep "<div class=\"phrase\">" | head -1 | tr -d '[:blank:]' | cut -c 20-50 | cut -d '<' -f 1)
+
 state=$(curl -s -A "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" https://www.accuweather.com/en/hr/split/121161/current-weather/121161 | grep "<div class=\"phrase\">" | head -1 | sed --expression='s/^[ \t]*//' | cut -c 21-50 | cut -d '<' -f 1)
-sed 's/^[ \t]*//'
+# sed 's/^[ \t]*//'
 echo $state $temp
