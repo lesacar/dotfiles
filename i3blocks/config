@@ -5,8 +5,7 @@ color=#F79494
 
 # Guess the weather quarter-hourly
 [weather]
-# command=curl -Ss 'https://wttr.in/split?0&T&Q' | cut -c 16- | head -2 | xargs echo
-command=custWeather | xargs echo
+command=source /etc/profile && custWeather | xargs echo
 interval=60
 color=#A4C2F4
 
