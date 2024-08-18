@@ -1,0 +1,6 @@
+dunstctl close-all
+makoctl dismiss -a
+# notify-send $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{ print $5 }')
+#notify-send $(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))
+#notify-send $(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))
+notify-send $(pactl get-sink-volume @DEFAULT_SINK@ | awk '{ print $5 }')

@@ -1,0 +1,4 @@
+# wine ~/.local/games/Warcraft\ III/Frozen\ Throne.exe -opengl -nativefullscr &
+wine64 ~/.local/games/Warcraft\ III/x86_64/Warcraft\ III.exe -window &
+# wine ~/.local/games/wc3_working/Frozen\ Throne.exe -opengl -nativefullscr &
+notify-send "Launching Warcraft III"

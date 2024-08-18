@@ -1,0 +1,12 @@
+#! /bin/bash
+ 
+files=(~/.config/wallpaper/*)
+ 
+randomfile=$(printf "%s\n" "${files[RANDOM % ${#files[@]}]}")
+# echo $randomfile
+
+killall swaybg
+
+feh --bg-fill $randomfile &
+swaybg -i $randomfile &
+# xwallpaper --stretch $randomfile

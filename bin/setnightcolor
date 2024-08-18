@@ -1,0 +1,2 @@
+#/bin/bash
+killall gammastep & sleep 0.2 && gammastep -O 3000K &

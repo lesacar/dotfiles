@@ -1,0 +1,7 @@
+# menu        = { shadow = false; };
+dropdown_menu = { shadow = false; };
+popup_menu    = { shadow = false; };
+utility       = { shadow = false; };
+vsync = false;
+rounded-corners-exclude = [ "class_g     = 'dwm'" ];
+backend = "xrender";
