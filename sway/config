@@ -70,7 +70,7 @@ bindsym $mod+e exec thunar
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+s exec --no-startup-id dmenu_run
+bindsym $mod+s exec --no-startup-id rofi -show drun
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 bindsym $mod+w exec browser
