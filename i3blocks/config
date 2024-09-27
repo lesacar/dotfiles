@@ -17,8 +17,7 @@ color=#91E78B
 
 # CPU temp average
 [cputemp]
-command=cpu_avg_temp 
-# | sed 's/^//'
+command=cpu_avg_temp | sed 's/^//'
 interval=5
 color=#FFFF00
 
