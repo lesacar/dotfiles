@@ -24,7 +24,7 @@ color=#FFFF00
 
 # Battery percent
 [battery]
-command=acpi | awk '{ print  $4}' | sed 's/,*//g' | sed 's/^/🔋/'
+command=acpi | cut -d ' ' -f 3- -- | awk '{NF -= 1; print $0}' | sed 's/.$//' | sed 's/^/🔋/'
 interval=60
 color=#7F7F7F
 

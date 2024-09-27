@@ -34,3 +34,4 @@ create_symlink ~/.dotfiles/mpv ~/.config/mpv
 create_symlink ~/.dotfiles/dunst ~/.config/dunst
 create_symlink ~/.dotfiles/mako ~/.config/mako
 create_symlink ~/.dotfiles/bin ~/.local/bin
+create_symlink ~/.dotfiles/foot ~/.config/foot
