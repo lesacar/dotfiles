@@ -1,6 +1,8 @@
 #!/bin/bash
 
 mkdir -pv ~/.local
+cp -rv bin ~/.local/
+
 
 create_symlink() {
   local target=$1
@@ -22,7 +24,7 @@ create_symlink() {
   fi
 }
 
-cp -r bin ~/.local/bin
+
 
 # Create symlinks with proper checks
 create_symlink ~/.dotfiles/nvim ~/.config/nvim
