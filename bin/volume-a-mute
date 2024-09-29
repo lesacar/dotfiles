@@ -9,7 +9,7 @@ pactl set-sink-mute @DEFAULT_SINK@ toggle
 mute_state=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -i yes)
 
 # Send notification based on mute state
-dunstctl close-all
+# dunstctl close-all
 makoctl dismiss
 if [ -z "$mute_state" ]; then
     notify-send "Sound" "Unmuted" -i audio-volume-high

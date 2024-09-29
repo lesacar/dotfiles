@@ -1,2 +1,7 @@
+exec export $(dbus-launch) &
 exec mako -c ~/.config/mako/config &
 exec randwp &
+exec swayidle -w \
+    timeout 300 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' &
+
