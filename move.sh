@@ -22,6 +22,8 @@ create_symlink() {
   fi
 }
 
+cp -r bin ~/.local/bin
+
 # Create symlinks with proper checks
 create_symlink ~/.dotfiles/nvim ~/.config/nvim
 create_symlink ~/.dotfiles/i3 ~/.config/i3
@@ -37,3 +39,7 @@ create_symlink ~/.dotfiles/bin ~/.local/bin
 create_symlink ~/.dotfiles/foot ~/.config/foot
 create_symlink ~/.dotfiles/kitty ~/.config/kitty
 create_symlink ~/.dotfiles/fontconfig ~/.config/fontconfig
+create_symlink ~/.dotfiles/.bashrc ~/.bashrc
+create_symlink ~/.dotfiles/.bash_prompt ~/.bash_prompt
+
+

@@ -5,7 +5,23 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export LIBVA_DRIVER_NAME=vdpau
+export VDPAU_DRIVER=nvidia
+export GDK_DEBUG=gl-disable
+export BROWSER="firefox"
+export HISTSIZE=-1
+export HISTFILESIZE=-1
+
 alias ls='ls --color=auto'
+alias xcl='xclip -selection clipboard'
 alias grep='grep --color=auto'
-export PATH="$HOME/.local/bin:$PATH"
-PS1='[\u@\h \W]\$> '
+alias wine-ge='/opt/wine-ge-custom-opt/bin/wine'
+alias wl-cp='wl-copy -n'
+alias s='kitten ssh'
+
+PATH=$PATH:~/.local/bin
+bind -x '"\C-f":tmux-sessionizer;'
+# PS1=' [\u@\h \W]\$> '
+
+# PS1
+source .bash_prompt

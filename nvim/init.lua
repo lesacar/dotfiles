@@ -7,6 +7,7 @@ set shiftwidth=4
 set smarttab
 set softtabstop=4
 set nofixeol
+set nofixendofline
 ]])
 vim.g.mapleader = " "
 
