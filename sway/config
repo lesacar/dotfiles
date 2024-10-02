@@ -74,6 +74,8 @@ tiling_drag enable
 bindsym $mod+Return exec kitty
 # File explorer
 bindsym $mod+e exec thunar 
+# Night color
+bindsym $mod+n exec setnightcolor
 # kill focused window
 bindsym $mod+q kill
 
