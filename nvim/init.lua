@@ -190,7 +190,7 @@ require("lazy").setup({
 	-- Then, because we use the `config` key, the configuration only runs
 	-- after the plugin has been loaded:
 	--  config = function() ... end
-
+	--[[
 	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
@@ -243,7 +243,7 @@ require("lazy").setup({
 				{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 			},
 		},
-	},
+	}, --]]
 
 	-- NOTE: Plugins can specify dependencies.
 	--
@@ -417,6 +417,7 @@ require("lazy").setup({
 			--    That is to say, every time a new file is opened that is associated with
 			--    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
 			--    function will be executed to configure the current buffer
+
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 				callback = function(event)
