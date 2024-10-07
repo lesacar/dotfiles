@@ -26,5 +26,7 @@ bind -x '"\C-f":tmux-sessionizer;'
 # PS1 (prompt)
 if [ -f "$HOME/.dotfiles/bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
+    GIT_PROMPT_SHOW_UPSTREAM=1
+    GIT_PROMPT_SHOW_UNTRACKED_FILES=normal
     source "$HOME/.dotfiles/bash-git-prompt/gitprompt.sh"
 fi
