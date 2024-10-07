@@ -12,8 +12,10 @@ create_symlink() {
     if [ -L "$link_name" ]; then
       if [ "$(readlink "$link_name")" != "$target" ]; then
         echo "Symlink $link_name already exists but points to a different target. Skipping..."
+        return 1
       else
         echo "Symlink $link_name already exists and points to the correct target."
+        return 2
       fi
     else
       echo "$link_name exists and is not a symlink. Skipping..."
@@ -41,7 +43,5 @@ create_symlink ~/.dotfiles/bin ~/.local/bin
 create_symlink ~/.dotfiles/foot ~/.config/foot
 create_symlink ~/.dotfiles/kitty ~/.config/kitty
 create_symlink ~/.dotfiles/fontconfig ~/.config/fontconfig
-create_symlink ~/.dotfiles/.bashrc ~/.bashrc
-create_symlink ~/.dotfiles/.bash_prompt ~/.bash_prompt
-
+create_symlink ~/.dotfiles/.bashrc ~/.bashrc || echo "Just in case, check if .bashrc was properly copied, if it already existed it will not be affected by this script, if your .bashrc is correct it should be symlinked to this repo's .bashrc"
 

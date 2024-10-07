@@ -23,5 +23,8 @@ PATH=$PATH:~/.local/bin
 bind -x '"\C-f":tmux-sessionizer;'
 # PS1=' [\u@\h \W]\$> '
 
-# PS1
-source .bash_prompt
+# PS1 (prompt)
+if [ -f "$HOME/.dotfiles/bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source "$HOME/.dotfiles/bash-git-prompt/gitprompt.sh"
+fi
