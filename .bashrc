@@ -11,6 +11,7 @@ export GDK_DEBUG=gl-disable
 export BROWSER="firefox"
 export HISTSIZE=-1
 export HISTFILESIZE=-1
+export XDG_CONFIG_HOME=~/.config
 
 alias ls='ls --color=auto'
 alias xcl='xclip -selection clipboard'
