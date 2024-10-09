@@ -18,6 +18,7 @@ alias grep='grep --color=auto'
 alias wine-ge='/opt/wine-ge-custom-opt/bin/wine'
 alias wl-cp='wl-copy -n'
 alias s='kitten ssh'
+alias ls='lsd'
 
 PATH=$PATH:~/.local/bin
 bind -x '"\C-f":tmux-sessionizer;'
