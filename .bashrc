@@ -1,7 +1,3 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -29,6 +25,7 @@ bind -x '"\C-f":tmux-sessionizer;'
 if [ -f "$HOME/.dotfiles/bash-git-prompt/gitprompt.sh" ]; then
 #    GIT_PROMPT_ONLY_IN_REPO=1
     GIT_PROMPT_SHOW_UPSTREAM=1
-    GIT_PROMPT_SHOW_UNTRACKED_FILES=normal
+    GIT_PROMPT_SHOW_UNTRACKED_FILES=no
+    GIT_PROMPT_IGNORE_SUBMODULES=1
     source "$HOME/.dotfiles/bash-git-prompt/gitprompt.sh"
 fi
