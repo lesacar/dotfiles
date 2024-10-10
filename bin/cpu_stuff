@@ -1,0 +1,2 @@
+echo -n "$(cpu_avg_temp)   $(cpu_usg)"
+echo ""
