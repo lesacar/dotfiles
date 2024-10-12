@@ -1,0 +1,8 @@
+#!/bin/bash
+gpu_temp=$(sensors | grep -A3 nouveau | grep temp | awk '{ print $2 }' | sed 's/[+°C]//g' | cut -d'.' -f1)
+
+pstate=$(sudo cat /sys/kernel/debug/dri/0/pstate | grep '*' | awk '{ print $1 }' | cut -c 1-2)
+
+echo -n "$gpu_temp°C   $pstate"
+echo ""
+

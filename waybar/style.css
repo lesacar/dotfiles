@@ -1,7 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 18px;
 }
 
 window#waybar {
@@ -86,9 +86,14 @@ button:hover {
 #power-profiles-daemon,
 #window,
 #custom-cpu_info,
+#custom-gpu_info,
 #workspaces {
     margin: 0 0px;
     padding: 0px 4px;
+    /* for some reason the text is just 2px above where it should
+        be, this fixes it*/
+    font-weight: bold;
+    padding-top: 2px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -174,6 +179,11 @@ label:focus {
 
 #custom-cpu_info {
     background-color: #8B0000;
+}
+
+#custom-gpu_info {
+    background-color: #ff00e2;
+    color: black;
 }
 
 #tray {

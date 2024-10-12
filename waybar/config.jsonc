@@ -15,6 +15,7 @@
         "sway/window"
     ],
     "modules-right": [
+        "custom/gpu_info",
         "pulseaudio",
         "custom/cpu_info",
         "memory",
@@ -30,6 +31,15 @@
         "tooltip": false,
         "interval": 5,
         "exec": "cpu_stuff",
+        "format-icons": ["", "", ""]
+    },
+
+    "custom/gpu_info":
+    {
+        "format": "{}",
+        "tooltip": false,
+        "interval": 5,
+        "exec": "NOUVEAU_TEMP",
         "format-icons": ["", "", ""]
     },
 
