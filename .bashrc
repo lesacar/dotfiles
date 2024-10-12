@@ -1,8 +1,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export LIBVA_DRIVER_NAME=vdpau
-export VDPAU_DRIVER=nvidia
+export LIBVA_DRIVER_NAME=nouveau
+export VDPAU_DRIVER=nouveau
 export GDK_DEBUG=gl-disable
 export BROWSER="firefox"
 export HISTSIZE=-1
