@@ -316,7 +316,8 @@ require("lazy").setup({
 				defaults = {
 					mappings = {
 						i = {
-							["<CR>"] = actions.select_tab,
+							["<C-i>"] = actions.select_tab,
+							["<CR>"] = actions.select_default,
 						},
 					},
 				},
@@ -546,7 +547,12 @@ require("lazy").setup({
 			local servers = {
 
 				clangd = {
-					cmd = { "clangd", "--completion-style=detailed" },
+					cmd = {
+						"clangd",
+						"--completion-style=detailed",
+						"--header-insertion=iwyu",
+						"--header-insertion-decorators",
+					},
 					init_options = {
 						compilationDatabasePath = "./build",
 					},
