@@ -29,7 +29,7 @@
     {
         "format": "{}",
         "tooltip": false,
-        "interval": 5,
+        "interval": 2,
         "exec": "cpu_stuff",
         "format-icons": ["", "", ""]
     },
@@ -38,7 +38,7 @@
     {
         "format": "{}",
         "tooltip": false,
-        "interval": 5,
+        "interval": 2,
         "exec": "NOUVEAU_TEMP",
         "format-icons": ["", "", ""]
     },
