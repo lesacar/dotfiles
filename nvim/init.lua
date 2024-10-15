@@ -594,6 +594,7 @@ require("lazy").setup({
 				"stylua", -- Used to format Lua code
 				"clangd",
 				"clang-format",
+				"cmake-language-server",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -858,6 +859,7 @@ require("lazy").setup({
 				"bash",
 				"c",
 				"cpp",
+				"cmake",
 				"diff",
 				"html",
 				"lua",
