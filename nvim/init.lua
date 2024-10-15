@@ -316,7 +316,9 @@ require("lazy").setup({
 				defaults = {
 					mappings = {
 						i = {
-							["<C-i>"] = actions.select_tab,
+							-- unfortunately can't have enter (<CR>) on both because that's a really hard
+							-- computer science problem amirite?
+							["<Tab>"] = actions.select_tab,
 							["<CR>"] = actions.select_default,
 						},
 					},
