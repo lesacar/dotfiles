@@ -2,7 +2,8 @@
 # wine64 ~/.local/games/Warcraft\ III/x86_64/Warcraft\ III.exe -window &
 # wine64 ~/.local/games/wc3/x86_64/Warcraft\ III.exe &
 # wine64 "/home/duje/.local/games/wc3ref/Warcraft III Reforged/Warcraft III Launcher.exe" &
-proton "/home/duje/.local/games/wc3ref/Warcraft III Reforged/Warcraft III Launcher.exe" &
+# proton "/home/duje/.local/games/wc3ref/Warcraft III Reforged/Warcraft III Launcher.exe" &
 # wine64 "/home/duje/.local/games/wc3/Warcraft III Launcher.exe" &
 # wine ~/.local/games/wc3_working/Frozen\ Throne.exe -opengl -nativefullscr &
+wine "/home/duje/.local/games/Warcraft III/Warcraft III.exe" &
 notify-send "Launching Warcraft III"

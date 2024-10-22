@@ -1,0 +1,2 @@
+# unzip in directory of same name as archive
+unzip "$1" -d "${1%.zip}"

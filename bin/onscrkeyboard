@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Check if wvkbd-mobintl is running
+if pgrep -x "wvkbd-mobintl" > /dev/null
+then
+    # If it's running, kill the process
+    pkill wvkbd-mobintl
+    notify-send "Killed OSK"
+else
+    # If it's not running, start the program with the -L 200 option
+    wvkbd-mobintl -L 200 &
+    notify-send "Started OSK"
+fi
+
