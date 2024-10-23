@@ -43,6 +43,7 @@ create_symlink ~/.dotfiles/foot ~/.config/foot
 create_symlink ~/.dotfiles/kitty ~/.config/kitty
 create_symlink ~/.dotfiles/waybar ~/.config/waybar
 create_symlink ~/.dotfiles/bin ~/.local/bin
+create_symlink ~/.dotfiles/xdg-desktop-portal ~/.local/xdg-desktop-portal
 create_symlink ~/.dotfiles/fontconfig ~/.config/fontconfig
 create_symlink ~/.dotfiles/.bashrc ~/.bashrc || echo "Just in case, check if .bashrc was properly copied, if it already existed it will not be affected by this script, if your .bashrc is correct it should be symlinked to this repo's .bashrc"
 
