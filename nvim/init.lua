@@ -129,7 +129,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-	pattern = { "*.frag", "*.vert" },
+	pattern = { "*.frag", "*.vert", "*.fsh", "*.vsh" },
 	callback = function()
 		vim.bo.filetype = "glsl"
 	end,
