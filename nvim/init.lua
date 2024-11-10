@@ -577,6 +577,12 @@ require("lazy").setup({
 						compilationDatabasePath = "./build",
 					},
 				},
+				zls = {
+					cmd = { "zls" },
+					settings = {
+						zls = {},
+					},
+				},
 				-- gopls = {},
 				-- pyright = {},
 				-- rust_analyzer = {},
