@@ -1,7 +1,5 @@
 [user]
 	email = 69954403+lesacar@users.noreply.github.com
 	name = lesacar
-[credential]
-	helper = store
 [init]
 	defaultBranch = main
