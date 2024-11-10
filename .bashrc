@@ -1,10 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export LIBVA_DRIVER_NAME=nouveau
-export VDPAU_DRIVER=nouveau
-export GDK_DEBUG=gl-disable
-export BROWSER="firefox"
+export AMD_VULKAN_ICD=RADV
+export MANGOHUD=1
+export BROWSER="chromium"
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 export XDG_CONFIG_HOME=~/.config
