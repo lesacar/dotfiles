@@ -574,7 +574,7 @@ require("lazy").setup({
 						"--header-insertion-decorators",
 					},
 					init_options = {
-						compilationDatabasePath = "./build",
+						-- compilationDatabasePath = "./build",
 					},
 				},
 				zls = {
