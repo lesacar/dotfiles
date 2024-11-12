@@ -15,6 +15,10 @@ vim.g.have_nerd_font = false
 -- Make line numbers default
 vim.opt.relativenumber = true
 vim.opt.number = true
+
+-- can be anywhere in the global namespace or whatever it's called, this just makes the zig lsp not be annoying
+vim.g.zig_fmt_autosave = false
+
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.opt.relativenumber = true
