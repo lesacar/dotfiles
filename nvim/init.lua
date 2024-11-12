@@ -179,11 +179,17 @@ require("lazy").setup({
 	--
 	-- See `:help gitsigns` to understand what the configuration keys do
 
-	-- my c3 syntax plugin
+	{
+		"Airbus5717/c3.vim",
+		ft = "c3",
+	},
+	--[[
+    -- my c3 syntax plugin
 	{
 		"lesacar/c3nvims",
 		ft = "c3",
 	},
+    --]]
 
 	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
