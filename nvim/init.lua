@@ -178,6 +178,13 @@ require("lazy").setup({
 	--    require('gitsigns').setup({ ... })
 	--
 	-- See `:help gitsigns` to understand what the configuration keys do
+
+	-- my c3 syntax plugin
+	{
+		"lesacar/c3nvims",
+		ft = "c3",
+	},
+
 	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -981,3 +988,24 @@ require("lazy").setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- start c3 lsp
+local lspconfig = require("lspconfig")
+
+lspconfig.c3_lsp.setup({
+	cmd = { "c3lsp" }, -- Path to the c3lsp executable
+	filetypes = { "c3", "c3i" },
+	root_dir = function(fname)
+		return vim.fn.getcwd()
+	end,
+})
+
+-- Create an autocommand to set the filetype for .c3 and .c3i files
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = { "*.c3", "*.c3i" },
+	callback = function()
+		vim.bo.filetype = "c3"
+	end,
+})
+
+-- end c3 lsp
