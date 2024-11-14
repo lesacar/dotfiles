@@ -16,6 +16,7 @@ input "6392:3991:USB_OPTICAL_MOUSE" {
 # force disable mouse acceleration for all mice
 input type:pointer {
     accel_profile flat
+    pointer_accel -0.3
 }
 
 include autostart
