@@ -1,2 +1,2 @@
-#/bin/bash
-firejail --profile=lutris /usr/bin/lutris
+#!/bin/bash
+firejail --noprofile /usr/bin/lutris
