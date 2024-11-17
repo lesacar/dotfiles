@@ -1,0 +1,1 @@
+WINEPREFIX="/run/media/duje/HDD/SteamLibrary/steamapps/compatdata/480/" WINEDLLOVERRIDES="OnlineFix64=n;SteamOverlay64=n;winmm=n,b;dnet=n;steam\_api64=n" GAMEID=480 PROTONPATH="~/.local/share/Steam/steamapps/common/Proton - Experimental" umu-run '/run/media/duje/HDD/games/Valheim/valheim.exe'
