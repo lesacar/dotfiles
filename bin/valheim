@@ -1,1 +1,0 @@
-gamescope -W 1920 -H 1080 --force-grab-cursor --backend=sdl --mangoapp -- gamemoderun online-fix-run /run/media/duje/HDD/games/Valheim/valheim.exe
