@@ -644,6 +644,10 @@ require("lazy").setup({
 				"clangd",
 				"clang-format",
 				"cmake-language-server",
+                "typescript-language-server",
+                "eslint-lsp",
+                "python-lsp-server",
+                "zls",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
