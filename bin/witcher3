@@ -1,3 +1,3 @@
 #!/bin/bash
 pushd "/run/media/duje/HDD/games/The Witcher 3 Wild Hunt/bin/x64_dx12/"
-gamescope -W 1920 -H 1080 --backend=sdl -F fsr --force-grab-cursor -- proton witcher3.exe
+WINEDLLOVERRIDES=version,dxgi=n,b WINEPREFIX=~/.local/share/proton-pfx/0/pfx GAMEID=umu-default gamescope -W 1920 -H 1080 --backend=sdl --force-grab-cursor -- umu-run witcher3.exe

@@ -1,2 +1,2 @@
-wine "/home/duje/.local/games/Warcraft III/x86_64/Warcraft III.exe" &
-notify-send "Launching Warcraft III"
+pushd "/run/media/duje/HDD/games/Warcraft III/x86_64/"
+WINEPREFIX=~/.local/share/proton-pfx/0/pfx GAMEID=0 gamescope -W 1920 -H 1080 -r 165 --adaptive-sync --backend=sdl -- gamemoderun umu-run Warcraft III.exe
