@@ -1,7 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export LD_BIND_NOW=1
 export AMD_VULKAN_ICD=RADV
 export MANGOHUD=1
 export BROWSER="chromium"
