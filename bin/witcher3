@@ -1,3 +1,5 @@
 #!/bin/bash
 pushd "/run/media/duje/HDD/games/The Witcher 3 Wild Hunt/bin/x64_dx12/"
-WINEDLLOVERRIDES=version,dxgi=n,b WINEPREFIX=~/.local/share/proton-pfx/0/pfx GAMEID=umu-default gamescope -W 1920 -H 1080 --backend=sdl --force-grab-cursor -- umu-run witcher3.exe
+# no gamescope, since it has issues with gamemoderun and vkbasalt
+WINEHAGS=1 WINEFSYNC=1 ENABLE_VKBASALT=1 WINEDLLOVERRIDES=version,dxgi=n,b WINEPREFIX=~/.local/share/proton-pfx/0/pfx gamemoderun wine witcher3.exe 
+
