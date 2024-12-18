@@ -1,0 +1,5 @@
+Note for myself if I ever want to turn off WoL.
+On arch, enable and disable wake on lan with this wiki section:
+https://wiki.archlinux.org/title/Wake-on-LAN#NetworkManager
+
+
