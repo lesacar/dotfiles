@@ -1,3 +1,9 @@
 #!/bin/bash
+set -xe
 pushd "/run/media/duje/HDD/games/Factorio/bin/x64/"
-WINEFSYNC=1 WINEPREFIX=~/.local/share/proton-pfx/0/pfx gamescope -W 1920 -H 1080 -r 165 --adaptive-sync --backend sdl --force-grab-cursor --mangoapp -- gamemoderun wine factorio.exe
+
+empty_shell_string_syntax='""'
+
+WINEFSYNC=1 WINEPREFIX=~/.local/share/proton-pfx/0/pfx gamemoderun wine cmd /c start $empty_shell_string_syntax factorio.exe
+
+# wine cmd /c start "" factorio.exe
