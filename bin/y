@@ -1,2 +1,2 @@
 #/bin/bash
-yt-dlp --remux-video $1
+yt-dlp --remux-video mp4 $1
