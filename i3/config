@@ -68,7 +68,7 @@ bindsym $mod+Return exec kitty
 # File explorer
 bindsym $mod+e exec thunar
 # Night color
-bindsym $mod+n exec setnightcolor
+bindsym $mod+n exec setnightcolorxorg
 # Restart bar
 bindsym $mod+b exec start-waybar
 # kill focused window

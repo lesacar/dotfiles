@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# File to store the current state (Redshift off or 3000K)
+STATE_FILE="$HOME/.local/share/redshift_state"
+
+# Check if the state file exists and its content
+if [ -f "$STATE_FILE" ]; then
+    CURRENT_STATE=$(cat "$STATE_FILE")
+else
+    CURRENT_STATE="off"
+    echo "$CURRENT_STATE" > "$STATE_FILE"
+fi
+
+# Toggle the state
+if [ "$CURRENT_STATE" == "off" ]; then
+    # Set Redshift to 3000K and update the state
+    redshift -O 3000K
+    echo "3000K" > "$STATE_FILE"
+else
+    # Turn Redshift off and update the state
+    redshift -x
+    echo "off" > "$STATE_FILE"
+fi
+
