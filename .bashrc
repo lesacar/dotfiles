@@ -20,7 +20,5 @@ alias ls='lsd'
 
 PATH=$PATH:~/.local/bin:~/.zig
 bind -x '"\C-f":tmux-sessionizer;'
-# PS1=' [\u@\h \W]\$> '
+PS1='[\h \w]\$> '
 
-# PS1 (prompt)
-PS1="~> "

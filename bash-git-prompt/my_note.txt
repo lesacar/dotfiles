@@ -1,4 +1,0 @@
-This was taken from:
-https://github.com/magicmonty/bash-git-prompt
-
-License kept as it was at time of download.
