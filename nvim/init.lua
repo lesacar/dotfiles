@@ -645,11 +645,11 @@ require("lazy").setup({
 				"stylua", -- Used to format Lua code
 				"clangd",
 				"clang-format",
-				"cmake-language-server",
                 "typescript-language-server",
                 "eslint-lsp",
                 "python-lsp-server",
                 "zls",
+                "asm-lsp",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

@@ -8,7 +8,7 @@ export BROWSER="brave"
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 export XDG_CONFIG_HOME=~/.config
-export MOZ_ENABLE_WAYLAND=
+export MOZ_ENABLE_WAYLAND=1
 
 alias ls='ls --color=auto'
 alias xcl='xclip -selection clipboard'
