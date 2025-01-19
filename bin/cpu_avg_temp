@@ -1,0 +1,3 @@
+temp=$(sensors | grep -A2 "ISA adapter" | grep Package | awk '{print $4}' | sed s/+//g |  sed 's/\..*//')
+temp+="°C"
+echo $temp
