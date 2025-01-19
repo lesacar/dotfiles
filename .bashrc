@@ -19,6 +19,7 @@ alias s='kitten ssh'
 alias ls='lsd'
 
 PATH=$PATH:~/.local/bin:~/.zig
+PATH=$PATH:~/.cargo/bin
 bind -x '"\C-f":tmux-sessionizer;'
 PS1='[\h \w]\$> '
 
