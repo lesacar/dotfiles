@@ -77,7 +77,7 @@ floating_modifier $mod
 tiling_drag enable
 # start a terminal
 # bindsym $mod+Return exec foot
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec my_terminal
 # File explorer
 bindsym $mod+e exec thunar
 # Night color
