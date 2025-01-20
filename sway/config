@@ -87,6 +87,9 @@ bindsym $mod+b exec start-waybar
 # kill focused window
 bindsym $mod+q kill
 
+# screenshot
+bindsym $Print exec screenshot
+
 # start dmenu (a program launcher)
 bindsym $mod+s exec --no-startup-id rofi -show drun
 # A more modern dmenu replacement is rofi:
