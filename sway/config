@@ -88,7 +88,7 @@ bindsym $mod+b exec start-waybar
 bindsym $mod+q kill
 
 # screenshot
-bindsym $Print exec screenshot
+bindsym Print exec screenshot
 
 # start dmenu (a program launcher)
 bindsym $mod+s exec --no-startup-id rofi -show drun
