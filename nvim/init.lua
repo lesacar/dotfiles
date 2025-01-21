@@ -650,6 +650,9 @@ require("lazy").setup({
                 "python-lsp-server",
                 "zls",
                 "asm-lsp",
+                "html-lsp",
+                "tailwindcss-language-server", -- i dont even know if this is the correct one
+                "prettierd", -- dont know how to use this but it had css as a tag
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -731,12 +734,12 @@ require("lazy").setup({
 					-- `friendly-snippets` contains a variety of premade snippets.
 					--    See the README about individual language/framework/plugin snippets:
 					--    https://github.com/rafamadriz/friendly-snippets
-					-- {
-					--   'rafamadriz/friendly-snippets',
-					--   config = function()
-					--     require('luasnip.loaders.from_vscode').lazy_load()
-					--   end,
-					-- },
+					{
+					  'rafamadriz/friendly-snippets',
+					  config = function()
+					    require('luasnip.loaders.from_vscode').lazy_load()
+					  end,
+					},
 				},
 			},
 			"saadparwaiz1/cmp_luasnip",
