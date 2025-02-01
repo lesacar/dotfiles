@@ -23,3 +23,6 @@ PATH=$PATH:~/.cargo/bin
 bind -x '"\C-f":tmux-sessionizer;'
 PS1='[\h \w]\$> '
 
+function yta() {
+    mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
+}
