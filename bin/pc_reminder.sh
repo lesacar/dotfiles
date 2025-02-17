@@ -8,7 +8,7 @@ if [[ $current_hour -ge 22 || $current_hour -lt 7 ]]; then
     # Launch yad if not already running
     if ! pgrep -x "yad" > /dev/null; then
         yad --text="🛑 TURN OFF YOUR PC SOON!" --title="BEDTIME REMINDER" \
-            --undecorated --on-top --no-buttons --close-on-unfocus=off \
+            --undecorated --on-top --no-buttons  \
             --width=400 --height=200 --center
     fi
 else
