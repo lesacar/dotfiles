@@ -1,2 +1,2 @@
-pushd "~/.local/games/Warcraft III/x86_64"
+cd "/home/user/.local/games/Warcraft III/x86_64"
 wine "Warcraft III.exe"

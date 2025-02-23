@@ -1,9 +1,13 @@
 #!/bin/bash
-set -xe
-pushd "/run/media/duje/HDD/games/Factorio/bin/x64/"
+set -x
 
 empty_shell_string_syntax='""'
+pushd "/run/media/duje/HDD/games/Factorio/bin/x64/"
 
-WINEFSYNC=1 WINEPREFIX=~/.local/share/proton-pfx/0/pfx gamemoderun wine cmd /c start $empty_shell_string_syntax factorio.exe
+WINEFSYNC=1 gamemoderun wine cmd /c start $empty_shell_string_syntax factorio.exe
+
+pushd "/home/user/.local/games/Factorio/bin/x64/"
+
+WINEFSYNC=1 gamemoderun wine cmd /c start $empty_shell_string_syntax factorio.exe
 
 # wine cmd /c start "" factorio.exe
