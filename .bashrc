@@ -3,7 +3,6 @@
 
 export KWIN_DRM_DISABLE_TRIPLE_BUFFERING=1
 export AMD_VULKAN_ICD=RADV
-export MANGOHUD=1
 export BROWSER="brave"
 export HISTSIZE=-1
 export HISTFILESIZE=-1
