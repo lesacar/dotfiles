@@ -7,11 +7,17 @@ return {
         opts = {
             provider = "deepseek",
             vendors = {
-                deepseek = {
+                deepseek_chat = {
                     __inherited_from = "openai",
                     api_key_name = "DEEPSEEK_API_KEY",
                     endpoint = "https://api.deepseek.com",
                     model = "deepseek-chat",
+                },
+                deepseek_reasoner = {
+                    __inherited_from = "openai",
+                    api_key_name = "DEEPSEEK_API_KEY",
+                    endpoint = "https://api.deepseek.com",
+                    model = "deepseek-reasoner",
                 },
                 openai = {
                     endpoint = "https://api.openai.com/v1",
