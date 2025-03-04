@@ -5,7 +5,7 @@ return {
         lazy = false,
         version = false, -- set this if you want to always pull the latest change
         opts = {
-            provider = "deepseek",
+            provider = "deepseek_chat",
             vendors = {
                 deepseek_chat = {
                     __inherited_from = "openai",
