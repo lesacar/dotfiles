@@ -614,6 +614,48 @@ require("lazy").setup({
                 ts_ls = {
                 },
 
+                pylsp = {
+                    settings = {
+                        pylsp = {
+                            plugins = {
+                                pycodestyle = {
+                                    enabled = false
+                                },
+                                flake8 = {
+                                    enabled = false
+                                },
+                                pyflakes = {
+                                    enabled = true  -- Keep pyflakes for syntax and import errors
+                                },
+                                mccabe = {
+                                    enabled = false
+                                },
+                                jedi = {
+                                    enabled = true  -- Keep Jedi for code completion and analysis
+                                },
+                                jedi_completion = {
+                                    enabled = true
+                                },
+                                jedi_definition = {
+                                    enabled = true
+                                },
+                                jedi_hover = {
+                                    enabled = true
+                                },
+                                jedi_references = {
+                                    enabled = true
+                                },
+                                jedi_signature_help = {
+                                    enabled = true
+                                },
+                                jedi_symbols = {
+                                    enabled = true
+                                }
+                            }
+                        }
+                    }
+                },
+
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
