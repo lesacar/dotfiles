@@ -1,3 +1,10 @@
 temp=$(sensors | grep "Tctl\|CPU" | awk '{print $2}' | sed s/+//g |  sed 's/\..*//')
+
+if [ -z "${temp}" ]; then
+# laptop
+
+temp=$(sensors | grep "Package id 0" | awk '{print $4}' | sed s/+//g |  sed 's/\..*//')
+fi
+
 temp+="°C"
 echo $temp
