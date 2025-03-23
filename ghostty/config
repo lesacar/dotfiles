@@ -41,3 +41,6 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+
+custom-shader = ~/.config/ghostty/shaders/thing.glsl
+font-size = 15
