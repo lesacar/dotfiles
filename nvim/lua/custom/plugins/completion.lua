@@ -11,7 +11,7 @@ return
                 }
             })
       -- Set up keybindings for normal and visual modes
-      vim.keymap.set({"n", "v"}, "<C-,>", ":ChatGPTRun complete_code<CR>", { silent = true })
+      vim.keymap.set({"n", "v"}, "<C-k>", ":ChatGPTRun complete_code<CR>", { silent = true })
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
