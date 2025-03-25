@@ -7,7 +7,7 @@ return
                 model = "gpt-4o-mini",
                 temperature = 0.2,
                 keymaps = {
-                    complete_code = "<C-,>"
+                    complete_code = "<C-k>"
                 }
             })
       -- Set up keybindings for normal and visual modes
