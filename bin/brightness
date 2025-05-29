@@ -1,15 +1,19 @@
 #!/bin/bash
 
+current=$(brightnessctl g)
 if [ "$1" = "up" ]; then
 	brightnessctl s 10%+
 elif [ "$1" = "down" ]; then
-	brightnessctl s 10%-
+    if [ "$current" -gt 750 ]; then
+    	brightnessctl s 10%-
+    else
+        echo "already at min brightness"
+    fi
 elif [ "$1" = "ask" ]; then
 	val=$(dmenu -p 'Set Brightness to: ' < /dev/null)
 	brightnessctl s $val
 fi
 
 getbrightness=$(brightnessctl | grep Current | awk '{ print $4 }' | tr -d '()')
-dunstctl close-all
 makoctl dismiss -a
 notify-send $getbrightness
