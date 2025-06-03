@@ -13,8 +13,8 @@
 set $mod Mod4
 
 # toggle external monitor and laptop monitor off and vice versa (this poor iGPU barely handles 2 displays)
-bindsym $mod+o output "HDMI-A-1" toggle
-bindsym $mod+p output "eDP-1" toggle
+bindsym $mod+Shift+o output "HDMI-A-1" toggle
+bindsym $mod+Shift+p output "eDP-1" toggle
 
 # output eDP-1 scale 1.25
 output HDMI-A-1 {
