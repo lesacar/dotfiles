@@ -9,7 +9,22 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-output eDP-1 scale 1.25
+# mod key is Windows Key
+set $mod Mod4
+
+# toggle external monitor and laptop monitor off and vice versa (this poor iGPU barely handles 2 displays)
+bindsym $mod+o output "HDMI-A-1" toggle
+bindsym $mod+p output "eDP-1" toggle
+
+# output eDP-1 scale 1.25
+output HDMI-A-1 {
+#    mode 800x600@75.000Hz
+    mode 1920x1080@165.000Hz
+}
+
+output eDP-1 {
+    scale 1.25
+}
 
 input "6392:3991:USB_OPTICAL_MOUSE" {
     scroll_factor 0.0
@@ -18,13 +33,13 @@ input "6392:3991:USB_OPTICAL_MOUSE" {
 # force disable mouse acceleration for all mice
 input type:pointer {
     accel_profile flat
-    pointer_accel -0.3
+    pointer_accel -0.6
+    scroll_factor 0.5
 }
 
 include autostart
 input * xkb_options compose:ralt
 
-set $mod Mod4
 
 gaps inner 5
 # gaps outer 4
@@ -97,7 +112,7 @@ bindsym $mod+s exec --no-startup-id rofi -show drun
 bindsym $mod+w exec $BROWSER
 
 # on screen keyboard
-bindsym $mod+o exec onscrkeyboard
+bindsym $mod+i exec onscrkeyboard
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop

@@ -97,8 +97,8 @@
     },
    "network": {
         "format-wifi": "({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-ethernet": "Ethernet ",
+        "tooltip-format": "{ipaddr} ({ifname}) via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
     },
