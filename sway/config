@@ -106,7 +106,7 @@ bindsym $mod+Return exec my_terminal
 # File explorer
 bindsym $mod+e exec thunar
 # Night color
-bindsym $mod+n exec setnightcolor
+bindsym $mod+Shift+n exec setnightcolor
 # Restart bar
 bindsym $mod+b exec start-waybar
 # kill focused window
