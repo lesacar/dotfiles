@@ -20,6 +20,7 @@ bindsym $mod+p output "eDP-1" toggle
 output HDMI-A-1 {
 #    mode 800x600@75.000Hz
     mode 1920x1080@165.000Hz
+    adaptive_sync on
 }
 
 output eDP-1 {
