@@ -19,8 +19,12 @@ bindsym $mod+p output "eDP-1" toggle
 # output eDP-1 scale 1.25
 output HDMI-A-1 {
 #    mode 800x600@75.000Hz
+
+    # this actually set the screen to 120Hz because?
+    # anyways too lazy to set up a wlr-randr command because what if im not using the monitor is it gonna mess with my internal screen etc...
     mode 1920x1080@165.000Hz
-    adaptive_sync on
+    # adaptive sync doesnt work on hdmi
+    # adaptive_sync on
 }
 
 output eDP-1 {
@@ -36,6 +40,11 @@ input type:pointer {
     accel_profile flat
     pointer_accel -0.6
     scroll_factor 0.5
+}
+
+input "1578:16641:MOSART_Semi._2.4G_Keyboard_Mouse" {
+	pointer_accel 0
+	accel_profile flat
 }
 
 include autostart
@@ -253,10 +262,7 @@ client.focused "#005577" "#005577" "#ffffff" "#005577"
 for_window [app_id="firefox"] border none
 titlebar_padding 1
 
-input "1578:16641:MOSART_Semi._2.4G_Keyboard_Mouse" {
-	pointer_accel 0
-	accel_profile flat
-}
+
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
