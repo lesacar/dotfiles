@@ -9,7 +9,7 @@ awk '
   END {
     used = memtotal + shmem - memfree - buffers - cached - sreclaimable
     percent = used / memtotal * 100
-    printf "{\"text\":\"%.1f%%\",\"tooltip\":\"%.2f / %.2f GiB used\"}\n", percent, used / 1048576, memtotal / 1048576
+    printf "{\"text\":\"%.0f%%\",\"tooltip\":\"%.2f / %.2f GiB used\"}\n", percent, used / 1048576, memtotal / 1048576
   }
 ' /proc/meminfo
 
