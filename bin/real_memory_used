@@ -1,0 +1,13 @@
+#!/bin/sh
+awk '
+  /^MemTotal:/      { memtotal = $2 }
+  /^Shmem:/         { shmem = $2 }
+  /^MemFree:/       { memfree = $2 }
+  /^Buffers:/       { buffers = $2 }
+  /^Cached:/        { cached = $2 }
+  /^SReclaimable:/  { sreclaimable = $2 }
+  END {
+    used = memtotal + shmem - memfree - buffers - cached - sreclaimable
+    printf "%.2f GiB\n", used / 1048576
+  }
+' /proc/meminfo
