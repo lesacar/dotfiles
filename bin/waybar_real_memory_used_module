@@ -1,0 +1,15 @@
+#!/bin/sh
+awk '
+  /^MemTotal:/      { memtotal = $2 }
+  /^Shmem:/         { shmem = $2 }
+  /^MemFree:/       { memfree = $2 }
+  /^Buffers:/       { buffers = $2 }
+  /^Cached:/        { cached = $2 }
+  /^SReclaimable:/  { sreclaimable = $2 }
+  END {
+    used = memtotal + shmem - memfree - buffers - cached - sreclaimable
+    percent = used / memtotal * 100
+    printf "{\"text\":\"%.1f%%\",\"tooltip\":\"%.2f / %.2f GiB used\"}\n", percent, used / 1048576, memtotal / 1048576
+  }
+' /proc/meminfo
+

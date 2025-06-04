@@ -18,7 +18,7 @@
         "custom/gpu_info",
         "pulseaudio",
         "custom/cpu_info",
-        "memory",
+        "custom/memory",
         "network",
         "battery",
         "clock",
@@ -40,6 +40,16 @@
         "tooltip": false,
         "interval": 2,
         "exec": "NOUVEAU_TEMP",
+        "format-icons": ["", "", ""]
+    },
+
+    "custom/memory":
+    {
+        "format": "{}",
+        "return-type": "json",
+        "tooltip": true,
+        "interval": 2,
+        "exec": "waybar_real_memory_used_module",
         "format-icons": ["", "", ""]
     },
 
