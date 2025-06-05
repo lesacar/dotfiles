@@ -7,3 +7,4 @@ exec swayidle -w \
 exec start-waybar &
 exec nm-tray &
 exec mako &
+exec playerctld &
