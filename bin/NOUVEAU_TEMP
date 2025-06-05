@@ -1,8 +1,37 @@
+
 #!/bin/bash
-gpu_temp=$(sensors | grep -A3 nouveau | grep temp | awk '{ print $2 }' | sed 's/[+°C]//g' | cut -d'.' -f1)
 
-pstate=$(sudo cat /sys/kernel/debug/dri/0/pstate | grep '*' | awk '{ print $1 }' | cut -c 1-2)
+# Default values
+gpu_temp="N/A"
 
-echo -n "$gpu_temp°C   $pstate"
+# Try NVIDIA proprietary driver first (nvidia-smi)
+if command -v nvidia-smi &> /dev/null && nvidia-smi > /dev/null 2>&1; then
+    gpu_temp=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits | head -n1)
+
+# If using Nouveau (open-source NVIDIA driver)
+elif sensors | grep -iq nouveau; then
+    gpu_temp=$(sensors | grep -A3 -i nouveau | grep -i temp | awk '{ print $2 }' | sed 's/[+°C]//g' | cut -d'.' -f1)
+
+# Try AMD GPUs via hwmon
+elif lspci | grep -i 'vga' | grep -iq amd; then
+    hwmon_path=$(find /sys/class/drm/ -name "hwmon" | grep card.*/device | head -n1)
+    if [[ -n "$hwmon_path" ]]; then
+        raw_temp=$(cat "$hwmon_path"/temp1_input 2>/dev/null)
+        if [[ -n "$raw_temp" ]]; then
+            gpu_temp=$((raw_temp / 1000))
+        fi
+    fi
+
+# Intel iGPU (part of CPU package)
+elif lspci | grep -i 'vga' | grep -iq intel; then
+    # Try PCH temp first, fallback to CPU package
+    gpu_temp=$(sensors 2>/dev/null | awk '/pch_skylake-virtual-0/,/^$/' | grep temp1 | awk '{ print $2 }' | sed 's/[+°C]//g' | cut -d'.' -f1)
+    if [[ -z "$gpu_temp" ]]; then
+        gpu_temp=$(sensors | grep 'Package id 0:' | awk '{ print $4 }' | sed 's/[+°C]//g' | cut -d'.' -f1)
+    fi
+fi
+
+# Output for Waybar
+echo -n "${gpu_temp}°C  "
 echo ""
 
