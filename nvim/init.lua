@@ -589,6 +589,7 @@ require("lazy").setup({
 						"--completion-style=detailed",
 						"--header-insertion=iwyu",
 						"--header-insertion-decorators",
+                        "--background-index",
 					},
 					init_options = {
 						-- compilationDatabasePath = "./build",
@@ -695,23 +696,26 @@ require("lazy").setup({
                 "html-lsp",
                 "tailwindcss-language-server", -- i dont even know if this is the correct one
                 "prettierd", -- dont know how to use this but it had css as a tag
-			})
-			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+            })
+            require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-			require("mason-lspconfig").setup({
-				handlers = {
-					function(server_name)
-						local server = servers[server_name] or {}
-						-- This handles overriding only values explicitly passed
-						-- by the server configuration above. Useful when disabling
-						-- certain features of an LSP (for example, turning off formatting for ts_ls)
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
-					end,
-				},
-			})
-		end,
-	},
+            require("mason-lspconfig").setup({
+                handlers = {
+                    function(server_name)
+                        local server = servers[server_name] or {}
+                        -- This handles overriding only values explicitly passed
+                        -- by the server configuration above. Useful when disabling
+                        -- certain features of an LSP (for example, turning off formatting for ts_ls)
+                        server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+                        require("lspconfig")[server_name].setup(server)
+                        on_attach = function ()
+                            print(server_name, "was attached.")
+                        end
+                    end,
+                },
+            })
+        end,
+    },
 
 	{ -- Autoformat
 		"stevearc/conform.nvim",

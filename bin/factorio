@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-pushd "/home/user/.local/games/Factorio/bin/x64/"
-WINEFSYNC=1 WINEDLLOVERRIDES="d3dcompiler_47" gamemoderun umu-run factorio.exe
+pushd "/home/user/Downloads/Factorio (2020)/Factorio/bin/x64"
+gamemoderun wine ./factorio.exe
 
 # wine cmd /c start "" factorio.exe
