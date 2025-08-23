@@ -40,106 +40,30 @@ return {
             return args
         end
 
-
-        local function llama_405b_base()
+        local function deepseek_help()
             dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://openrouter.ai/api/v1/chat/completions',
-                model = 'meta-llama/llama-3.1-405b',
-                api_key_name = 'OPEN_ROUTER_API_KEY',
-                max_tokens = '128',
-                replace = false,
-            }, custom_make_openai_spec_curl_args, handle_open_router_spec_data)
-        end
-
-        local function groq_replace()
-            dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.groq.com/openai/v1/chat/completions',
-                -- model = 'llama-3.3-70b-versatile',
-                model = 'llama3-70b-8192',
-                api_key_name = 'GROQ_API_KEY',
-                system_prompt = system_prompt,
-                replace = true,
-            }, dingllm.make_openai_spec_curl_args, dingllm.handle_openai_spec_data)
-        end
-
-        local function groq_help()
-            dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.groq.com/openai/v1/chat/completions',
-                model = 'llama-3.3-70b-versatile',
-                api_key_name = 'GROQ_API_KEY',
+                url = 'https://api.deepseek.com/',
+                model = 'deepseek-chat',
+                api_key_name = 'DEEPSEEK_API_KEY',
                 system_prompt = helpful_prompt,
                 replace = false,
             }, dingllm.make_openai_spec_curl_args, dingllm.handle_openai_spec_data)
         end
 
-        local function llama405b_replace()
+
+        local function deepseek_replace()
             dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.lambdalabs.com/v1/chat/completions',
-                model = 'hermes-3-llama-3.1-405b-fp8',
-                api_key_name = 'LAMBDA_API_KEY',
+                url = 'https://api.deepseek.com/',
+                model = 'deepseek-chat',
+                api_key_name = 'DEEPSEEK_API_KEY',
                 system_prompt = system_prompt,
                 replace = true,
             }, dingllm.make_openai_spec_curl_args, dingllm.handle_openai_spec_data)
         end
 
-        local function llama405b_help()
-            dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.lambdalabs.com/v1/chat/completions',
-                model = 'hermes-3-llama-3.1-405b-fp8',
-                api_key_name = 'LAMBDA_API_KEY',
-                system_prompt = helpful_prompt,
-                replace = false,
-            }, dingllm.make_openai_spec_curl_args, dingllm.handle_openai_spec_data)
-        end
+        vim.keymap.set({ 'n', 'v' }, '<leader>k', deepseek_replace, { desc = 'llm groq' })
+        vim.keymap.set({ 'n', 'v' }, '<leader>K', deepseek_help, { desc = 'llm groq_help' })
 
-        local function anthropic_help()
-            dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.anthropic.com/v1/messages',
-                model = 'claude-3-5-sonnet-20241022',
-                api_key_name = 'ANTHROPIC_API_KEY',
-                system_prompt = helpful_prompt,
-                replace = false,
-            }, dingllm.make_anthropic_spec_curl_args, dingllm.handle_anthropic_spec_data)
-        end
-
-        local function anthropic_replace()
-            dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.anthropic.com/v1/messages',
-                model = 'claude-3-5-sonnet-20241022',
-                api_key_name = 'ANTHROPIC_API_KEY',
-                system_prompt = system_prompt,
-                replace = true,
-            }, dingllm.make_anthropic_spec_curl_args, dingllm.handle_anthropic_spec_data)
-        end
-
-        -- not yapcine but me
-        local function hf_replace()
-            dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.lambdalabs.com/v1/chat/completions',
-                model = 'hermes-3-llama-3.1-405b-fp8',
-                api_key_name = 'LAMBDA_API_KEY',
-                system_prompt = system_prompt,
-                replace = true,
-            }, dingllm.make_openai_spec_curl_args, dingllm.handle_openai_spec_data)
-        end
-
-        local function hf_help()
-            dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.lambdalabs.com/v1/chat/completions',
-                model = 'hermes-3-llama-3.1-405b-fp8',
-                api_key_name = 'LAMBDA_API_KEY',
-                system_prompt = helpful_prompt,
-                replace = false,
-            }, dingllm.make_openai_spec_curl_args, dingllm.handle_openai_spec_data)
-        end
-
-        vim.keymap.set({ 'n', 'v' }, '<leader>k', groq_replace, { desc = 'llm groq' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>K', groq_help, { desc = 'llm groq_help' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>L', llama405b_help, { desc = 'llm llama405b_help' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>l', llama405b_replace, { desc = 'llm llama405b_replace' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>I', anthropic_help, { desc = 'llm anthropic_help' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>i', anthropic_replace, { desc = 'llm anthropic' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>o', llama_405b_base, { desc = 'llama base' })
     end,
 }
 
