@@ -42,7 +42,7 @@ return {
 
         local function deepseek_help()
             dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.deepseek.com/',
+                url = 'https://api.deepseek.com/chat/completions',
                 model = 'deepseek-chat',
                 api_key_name = 'DEEPSEEK_API_KEY',
                 system_prompt = helpful_prompt,
@@ -53,7 +53,7 @@ return {
 
         local function deepseek_replace()
             dingllm.invoke_llm_and_stream_into_editor({
-                url = 'https://api.deepseek.com/',
+                url = 'https://api.deepseek.com/chat/completions',
                 model = 'deepseek-chat',
                 api_key_name = 'DEEPSEEK_API_KEY',
                 system_prompt = system_prompt,
@@ -61,8 +61,8 @@ return {
             }, dingllm.make_openai_spec_curl_args, dingllm.handle_openai_spec_data)
         end
 
-        vim.keymap.set({ 'n', 'v' }, '<leader>k', deepseek_replace, { desc = 'llm groq' })
-        vim.keymap.set({ 'n', 'v' }, '<leader>K', deepseek_help, { desc = 'llm groq_help' })
+        vim.keymap.set({ 'n', 'v' }, '<leader>k', deepseek_replace, { desc = 'llm deepseek' })
+        vim.keymap.set({ 'n', 'v' }, '<leader>K', deepseek_help, { desc = 'llm deepseek_help' })
 
     end,
 }
