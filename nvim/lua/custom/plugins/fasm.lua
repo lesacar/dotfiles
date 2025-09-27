@@ -1,0 +1,4 @@
+return {
+  'fedorenchik/fasm.vim',
+}
+
