@@ -9,9 +9,6 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# remap caps lock and escape
-input "type:keyboard" xkb_options caps:swapescape
-
 # mod key is Windows Key
 set $mod Mod4
 
@@ -50,8 +47,10 @@ input "1578:16641:MOSART_Semi._2.4G_Keyboard_Mouse" {
 	accel_profile flat
 }
 
+
 include autostart
 input * xkb_options compose:ralt
+input type:keyboard xkb_options caps:swapescape
 
 
 gaps inner 5
