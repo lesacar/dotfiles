@@ -9,6 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# remap caps lock and escape
+input "type:keyboard" xkb_options caps:swapescape
+
 # mod key is Windows Key
 set $mod Mod4
 
