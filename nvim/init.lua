@@ -24,6 +24,9 @@ vim.pack.add({
     },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+    { src = "https://github.com/windwp/nvim-ts-autotag" },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+
 })
 
 require("mini.pick").setup()
@@ -36,8 +39,27 @@ require("mason-tool-installer").setup({
         "ruff",
         "clangd",
         "ts_ls",
+        "tailwindcss",
     },
 })
+require('nvim-ts-autotag').setup()
+require('nvim-ts-autotag').setup()
+
+
+-- treesitter automatically install new parsers on new filetype
+local parsers = require'nvim-treesitter.parsers'
+function _G.ensure_treesitter_language_installed()
+  local lang = parsers.get_buf_lang()
+  if parsers.get_parser_configs()[lang] and not parsers.has_parser(lang) then
+    vim.schedule_wrap(function()
+    vim.cmd("TSInstallSync "..lang)
+    vim.cmd[[e!]]
+    end)()
+  end
+end
+-- end treesitter thing
+
+vim.cmd[[autocmd FileType * :lua ensure_treesitter_language_installed()]]
 
 vim.lsp.config("lua_ls", {
     settings = {
@@ -81,7 +103,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 --]]
 
 vim.cmd("set completeopt+=noselect")
-vim.diagnostic.config({ virtual_text = { current_line = true }})
+vim.diagnostic.config({ virtual_text = true })
 
 -- LSP 
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
