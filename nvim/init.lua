@@ -20,7 +20,7 @@ vim.pack.add({
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
     {
         src = "https://github.com/saghen/blink.cmp",
-        version = "v1.7.0"
+        version = "v1.7.0",
     },
     { src = "https://github.com/neovim/nvim-lspconfig" },
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
@@ -59,6 +59,9 @@ require("blink.cmp").setup({
     sources = {
         default = { "lsp", "path", "buffer", "snippets"},
     },
+    fuzzy = {
+        implementation = "lua",
+    }
 })
 
 vim.keymap.set("n", "<leader>ff", ":Pick files<CR>")
