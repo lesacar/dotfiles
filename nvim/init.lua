@@ -10,6 +10,8 @@ vim.o.mouse = "a"
 vim.o.showmode = false
 vim.o.clipboard = "unnamedplus"
 vim.o.winborder = "rounded"
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 
 vim.pack.add({
