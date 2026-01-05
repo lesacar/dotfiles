@@ -29,8 +29,6 @@ create_symlink() {
 
 # Create symlinks with proper checks
 create_symlink ~/.dotfiles/nvim ~/.config/nvim
-create_symlink ~/.dotfiles/i3 ~/.config/i3
-create_symlink ~/.dotfiles/i3blocks ~/.config/i3blocks
 create_symlink ~/.dotfiles/sway ~/.config/sway
 create_symlink ~/.dotfiles/picom ~/.config/picom
 create_symlink ~/.dotfiles/clangd ~/.config/clangd
