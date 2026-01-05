@@ -1,6 +1,8 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Font Awesome 7 Free", Roboto, Helvetica, Arial, sans-serif;
+    /* font-family: "Roboto", Helvetica, sans-serif, "Font Awesome 7 Free"; */
+    font-family: "Roboto", Helvetica, sans-serif, FontAwesome;
+    font-family: "sans-serif";
     font-size: 18px;
 }
 
@@ -100,8 +102,8 @@ button:hover {
     padding: 0px 4px;
     /* for some reason the text is just 2px above where it should
         be, this fixes it*/
+    /* padding-top: 2px; */
     font-weight: bold;
-    padding-top: 2px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -270,7 +272,7 @@ label:focus {
 }
 
 #privacy-item {
-    padding: 0 5px;
+    padding: 0px 5px;
     color: white;
 }
 
