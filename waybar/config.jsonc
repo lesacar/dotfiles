@@ -7,12 +7,12 @@
     "spacing": 5, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
-        "sway/scratchpad",
+        "hyprland/workspaces",
+        "hyprland/mode",
+        "hyprland/scratchpad",
     ],
     "modules-center": [
-        "sway/window"
+        "hyprland/window"
     ],
     "modules-right": [
         "custom/gpu_info",
@@ -54,7 +54,7 @@
     },
 
     // Modules configuration
-    // "sway/workspaces": {
+    // "hyprland/workspaces": {
     //     "disable-scroll": true,
     //     "all-outputs": true,
     //     "warp-on-scroll": false,
@@ -70,10 +70,10 @@
     //         "default": ""
     //     }
     // },
-   "sway/mode": {
+   "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "sway/scratchpad": {
+    "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
         "format-icons": ["", ""],
