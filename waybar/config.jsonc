@@ -10,6 +10,7 @@
         "hyprland/workspaces",
         "hyprland/mode",
         "hyprland/scratchpad",
+        "hyprland/submap",
     ],
     "modules-center": [
         "hyprland/window"
@@ -45,7 +46,7 @@
 
     "custom/memory":
     {
-        "format": "{}",
+        "format": "M: {} ",
         "return-type": "json",
         "tooltip": true,
         "interval": 2,
@@ -88,9 +89,6 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         // "format-alt": "{:%Y-%m-%d}"
-    },
-    "memory": {
-        "format": "{}% "
     },
     "battery": {
         "states": {
