@@ -42,3 +42,4 @@ git
 base-devel
 powertop
 btop
+brightnessctl
