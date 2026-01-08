@@ -31,7 +31,15 @@ vim.pack.add({
 
 })
 
-require("mini.pick").setup()
+local mini_pick_config = {
+    mappings = {
+        choose_in_tabpage = '<CR>',
+        choose_in_split = '<C-s>',
+        choose_in_vsplit = '<C-v>',
+
+    }
+}
+require("mini.pick").setup(mini_pick_config)
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
@@ -122,5 +130,14 @@ vim.keymap.set("n", "<leader>o", function()
     vim.cmd("so")
     print("SHOUTOUT: " .. vim.fn.expand("%:t"))
 end)
-vim.keymap.set("n", "<leader>w", ":w<CR>")
-vim.keymap.set("n", "<leader>q!", ":q<CR>")
+vim.keymap.set("n", "<leader>w", ":w!<CR>")
+vim.keymap.set("n", "<leader>q", ":q!<CR>")
+
+vim.keymap.set("n", "<leader>n", ":tabn<CR>")
+vim.keymap.set("n", "<leader>b", ":tabp<CR>")
+
+-- mini.pick
+-- prevent other keybinds from first triggering space+f
+vim.keymap.set("n", "<leader>f", "<Nop>")
+vim.keymap.set("n", "<leader>fg", ":Pick grep_live<CR>")
+vim.keymap.set("n", "<leader>ff", ":Pick files<CR>")
