@@ -31,15 +31,17 @@ vim.pack.add({
 
 })
 
+-- mini.pick
 local mini_pick_config = {
     mappings = {
-        choose_in_tabpage = '<CR>',
+        choose = '<C-t>', -- need to remap default <CR> bind for the other one to work
+        choose_in_tabpage = '<CR>', -- open tabs instead of buffers by default
         choose_in_split = '<C-s>',
         choose_in_vsplit = '<C-v>',
-
     }
 }
 require("mini.pick").setup(mini_pick_config)
+
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason-tool-installer").setup({
@@ -131,7 +133,9 @@ vim.keymap.set("n", "<leader>o", function()
     print("SHOUTOUT: " .. vim.fn.expand("%:t"))
 end)
 vim.keymap.set("n", "<leader>w", ":w!<CR>")
-vim.keymap.set("n", "<leader>q", ":q!<CR>")
+
+-- doesn't work?
+-- vim.keymap.set("n", "<leader>q", ":q!<CR>")
 
 vim.keymap.set("n", "<leader>n", ":tabn<CR>")
 vim.keymap.set("n", "<leader>b", ":tabp<CR>")
