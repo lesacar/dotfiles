@@ -1,0 +1,30 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "openrouter": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "OpenRouter",
+      "options": {
+        "baseURL": "https://openrouter.ai/api/v1"
+      }
+    },
+    "cerebras": {
+      "npm": "@ai-sdk/cerebras",
+      "name": "Cerebras",
+      "options": {
+        "apiKey": "{env:CEREBRAS_API_KEY}"
+      }
+    }
+  },
+  "small_model": "cerebras/gpt-oss-120b",
+  "mcp": {
+    "mcp_zero_discovery": {
+      "type": "local",
+      "command": ["python", "C:\\Users\\user\\Desktop\\other\\prog\\mcpzerotest\\MCP-Zero\\mcp_zero_server.py"],
+      "enabled": true
+    }
+  },
+  "permission": {
+    "mcp-zero-discovery_discover_tools": "allow"
+  }
+}

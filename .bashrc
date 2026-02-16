@@ -25,3 +25,10 @@ PS1='[\h \w]\$> '
 function yta() {
     mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
 }
+
+# opencode
+export PATH=/home/duje/.opencode/bin:$PATH
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# OpenClaw Completion
+source "/home/duje/.openclaw/completions/openclaw.bash"
