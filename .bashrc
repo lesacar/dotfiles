@@ -1,3 +1,5 @@
+# TODO: make a separate common.bash file that containts common things like aliases, and keep machine-specific stuff like openclaw in native .bashrc that WON'T be symlinked to dotfiles
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -27,8 +29,11 @@ function yta() {
 }
 
 # opencode
-export PATH=/home/duje/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 
 # OpenClaw Completion
-source "/home/duje/.openclaw/completions/openclaw.bash"
+# source "$HOME/.openclaw/completions/openclaw.bash"
+
+# TODO: make sure this doesn't run on ALL of my machiens
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"

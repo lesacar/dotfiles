@@ -1,30 +1,52 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "openrouter": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "OpenRouter",
-      "options": {
-        "baseURL": "https://openrouter.ai/api/v1"
-      }
+    "$schema": "https://opencode.ai/config.json",
+    "provider": {
+        "openrouter": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "OpenRouter",
+            "options": {
+                "baseURL": "https://openrouter.ai/api/v1"
+            }
+        },
+        "cerebras": {
+            "npm": "@ai-sdk/cerebras",
+            "name": "Cerebras"
+        }
     },
-    "cerebras": {
-      "npm": "@ai-sdk/cerebras",
-      "name": "Cerebras",
-      "options": {
-        "apiKey": "{env:CEREBRAS_API_KEY}"
-      }
+    "small_model": "openrouter/stepfun/step-3.5-flash:free",
+    "watcher": {
+        "ignore": [
+            "node_modules/**",
+            "dist/**",
+            ".git/**",
+            "*.log",
+            "coverage/**"
+        ]
+    },
+    "compaction": {
+        "auto": true,
+        "prune": true,
+        "reserved": 10000
+    },
+
+    "agent": {
+        "code-reviewer": {
+            "description": "Reviews code for best practices and potential issues",
+            "mode": "subagent",
+            "prompt": "You are a code reviewer. Focus on security, performance, and maintainability.",
+            "tools": {
+                "write": false,
+                "edit": false
+            }
+        },
+        "research": {
+            "description": "Deeply researches a given topic from online sources",
+            "mode": "subagent",
+            "prompt": "You are a deep researcher. Conduct as many web searches, web-fetch calls, and other activies to deeply research the given topic, this should include niche edge cases or quirks that a quick-search would never show. Crawl as many sources as possible to get a very good idea of the topic.",
+            "tools": {
+                "write": false,
+                "edit": false
+            }
+        }
     }
-  },
-  "small_model": "cerebras/gpt-oss-120b",
-  "mcp": {
-    "mcp_zero_discovery": {
-      "type": "local",
-      "command": ["python", "C:\\Users\\user\\Desktop\\other\\prog\\mcpzerotest\\MCP-Zero\\mcp_zero_server.py"],
-      "enabled": true
-    }
-  },
-  "permission": {
-    "mcp-zero-discovery_discover_tools": "allow"
-  }
 }
