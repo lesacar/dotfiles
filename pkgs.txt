@@ -8,7 +8,6 @@ cpupower
 less
 mpv
 yt-dlp
-intel-gpu-tools
 rofi
 ttf-font-awesome
 stylua
@@ -43,3 +42,6 @@ base-devel
 powertop
 btop
 brightnessctl
+cmake
+premake
+network-manager-applet
