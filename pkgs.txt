@@ -58,3 +58,4 @@ otf-font-awesome
 tlp
 smartmontools
 ethtool
+mpv-mpris

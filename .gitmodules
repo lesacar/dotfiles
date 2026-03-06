@@ -1,3 +1,0 @@
-[submodule "mpv/src/mpv-mpris"]
-	path = mpv/src/mpv-mpris
-	url = https://github.com/hoyon/mpv-mpris
