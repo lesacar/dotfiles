@@ -59,3 +59,7 @@ tlp
 smartmontools
 ethtool
 mpv-mpris
+powertop
+ethtool
+smartmontools
+xdg-utils

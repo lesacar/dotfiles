@@ -36,4 +36,4 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 # source "$HOME/.openclaw/completions/openclaw.bash"
 
 # TODO: make sure this doesn't run on ALL of my machiens
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
