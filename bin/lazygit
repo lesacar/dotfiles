@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 fi
 
 # Add all changes to staging area
-git add .
+git add -A
 
 # Commit changes with provided message
 git commit -m "$1"
