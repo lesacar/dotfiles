@@ -61,6 +61,8 @@ require('nvim-ts-autotag').setup()
 -- treesitter automatically install new parsers on new filetype
 local parsers = require'nvim-treesitter.parsers'
 function _G.ensure_treesitter_language_installed()
+  -- replace with
+  -- local lang = vim.treesitter.language.get_lang(vim.bo[vim.api.nvim_get_current_buf()].filetype)
   local lang = parsers.get_buf_lang()
   if parsers.get_parser_configs()[lang] and not parsers.has_parser(lang) then
     vim.schedule_wrap(function()
