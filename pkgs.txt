@@ -63,3 +63,4 @@ powertop
 ethtool
 smartmontools
 xdg-utils
+kanshi

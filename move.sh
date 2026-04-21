@@ -49,4 +49,5 @@ create_symlink ~/.dotfiles/.bashrc ~/.bashrc || echo "Just in case, check if .ba
 create_symlink ~/.dotfiles/.xinitrc ~/.xinitrc || "failed to copy .xinitrc, either it's already a symlink or please do so manually"
 create_symlink ~/.dotfiles/ghostty ~/.config/ghostty
 create_symlink ~/.dotfiles/ai_cli ~/.config/ai_cli
+create_symlink ~/.dotfiles/kanshi/ ~/.config/kanshi
 
