@@ -64,3 +64,5 @@ ethtool
 smartmontools
 xdg-utils
 kanshi
+btop
+htop
