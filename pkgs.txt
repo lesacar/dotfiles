@@ -66,3 +66,4 @@ xdg-utils
 kanshi
 btop
 htop
+hypridle

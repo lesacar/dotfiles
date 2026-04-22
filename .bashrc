@@ -14,7 +14,6 @@ export MOZ_ENABLE_WAYLAND=1
 alias ls='ls --color=auto'
 alias xcl='xclip -selection clipboard'
 alias grep='grep --color=auto'
-alias wine-ge='/opt/wine-ge-custom-opt/bin/wine'
 alias wl-cp='wl-copy -n'
 alias s='kitten ssh'
 alias ls='lsd'
