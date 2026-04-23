@@ -73,3 +73,5 @@ ttf-monaspace-frozen
 wget
 tree-sitter-cli
 npm
+noto-fonts
+noto-fonts-cjk
