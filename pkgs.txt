@@ -67,3 +67,6 @@ kanshi
 btop
 htop
 hypridle
+wireplumber
+guvcview
+ttf-terminus-nerd
