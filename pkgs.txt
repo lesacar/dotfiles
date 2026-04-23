@@ -69,4 +69,7 @@ htop
 hypridle
 wireplumber
 guvcview
-ttf-terminus-nerd
+ttf-monaspace-frozen
+wget
+tree-sitter-cli
+npm

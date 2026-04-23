@@ -46,8 +46,9 @@ create_symlink ~/.dotfiles/fontconfig ~/.config/fontconfig
 create_symlink ~/.dotfiles/tmux ~/.config/tmux
 create_symlink ~/.dotfiles/hypr ~/.config/hypr
 create_symlink ~/.dotfiles/.bashrc ~/.bashrc || echo "Just in case, check if .bashrc was properly copied, if it already existed it will not be affected by this script, if your .bashrc is correct it should be symlinked to this repo's .bashrc"
-create_symlink ~/.dotfiles/.xinitrc ~/.xinitrc || "failed to copy .xinitrc, either it's already a symlink or please do so manually"
+create_symlink ~/.dotfiles/.xinitrc ~/.xinitrc || echo "failed to copy .xinitrc, either it's already a symlink or please do so manually"
 create_symlink ~/.dotfiles/ghostty ~/.config/ghostty
 create_symlink ~/.dotfiles/ai_cli ~/.config/ai_cli
 create_symlink ~/.dotfiles/kanshi/ ~/.config/kanshi
+create_symlink ~/.dotfiles/alacritty ~/.config/alacritty
 

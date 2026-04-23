@@ -28,6 +28,7 @@ vim.pack.add({
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
     { src = "https://github.com/windwp/nvim-ts-autotag" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+    { src = "https://github.com/typicode/bg.nvim" },
 
 })
 
@@ -51,7 +52,6 @@ require("mason-tool-installer").setup({
         "ruff",
         "clangd",
         "ts_ls",
-        "tailwindcss",
     },
 })
 require('nvim-ts-autotag').setup()
@@ -88,6 +88,38 @@ require("blink.cmp").setup({
 })
 
 vim.keymap.set("n", "<leader>ff", ":Pick files<CR>")
+
+require('vague').setup({
+  transparent = false, -- If true, background is not set
+  bold = true, -- Disable bold globally
+  italic = true, -- Disable italic globally
+  on_highlights = function(hl, colors) end,
+  colors = {
+    bg = '#000000',
+    inactiveBg = '#000000',
+    fg = '#74e8e8',
+    floatBorder = '#878787',
+    line = '#252530',
+    comment = '#408040',
+    builtin = '#b4d4cf',
+    func = '#c48282',
+    string = '#b5f2a8',
+    number = '#ED9B00',
+    property = '#c3c3d5',
+    constant = '#009dc4',
+    parameter = '#009dc4',
+    visual = '#222222',
+    error = '#ff0000',
+    warning = '#77ff00',
+    hint = '#77ff00',
+    operator = '#70a0a0',
+    keyword = '#009dc4',
+    type = '#009dc4',
+    search = '#405065',
+    plus = '#7fa563',
+    delta = '#f3be7c',
+  },
+})
 
 vim.cmd("colorscheme vague")
 
