@@ -122,6 +122,7 @@ button:hover {
 
 #battery {
     background-color: #ffffff;
+    padding-right: 1em;
     color: #000000;
 }
 
@@ -153,6 +154,7 @@ label:focus {
 }
 
 #memory, #custom-memory {
+    padding-right: 1em;
     background-color: #9b59b6;
 }
 
@@ -161,6 +163,7 @@ label:focus {
 }
 
 #network {
+    padding-right: 1em;
     background-color: #2980b9;
 }
 
@@ -170,6 +173,7 @@ label:focus {
 
 #pulseaudio {
     background-color: #f1c40f;
+    padding-right: 1em;
     color: #000000;
 }
 
