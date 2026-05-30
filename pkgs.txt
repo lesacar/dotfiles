@@ -76,3 +76,5 @@ npm
 noto-fonts
 noto-fonts-cjk
 hyprsunset
+network-manager-applet
+uv

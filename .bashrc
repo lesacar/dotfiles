@@ -27,6 +27,9 @@ function yta() {
     mpv --ytdl-format=bestaudio ytdl://ytsearch:"$*"
 }
 
+bind 'set enable-bracketed-paste off'
+
+
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
