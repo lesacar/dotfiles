@@ -302,7 +302,7 @@ hl.config({
         -- remove cringe
         disable_splash_rendering = true,
         -- remove cringe
-
+        background_color = "0x000000",
         enable_swallow = true,
         enable_anr_dialog = false,
     },

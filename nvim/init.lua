@@ -66,8 +66,13 @@ vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
             runtime = { version = "LuaJIT" },
-            diagnostics = { globals = { "vim", "require" } },
-            workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+            -- hl is hyprland
+            -- diagnostics = { globals = { "vim", "require", "hl" } },
+            diagnostics = { globals = { "vim", "hl" } },
+            -- workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+            telemetry = {
+                enable = false,
+            }
         },
     },
 })

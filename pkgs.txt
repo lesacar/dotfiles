@@ -78,3 +78,5 @@ noto-fonts-cjk
 hyprsunset
 network-manager-applet
 uv
+otf-commit-mono-nerd
+

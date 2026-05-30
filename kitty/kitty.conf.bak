@@ -1,10 +1,23 @@
-font_family      family='CommitMono Nerd Font Mono' postscript_name=CommitMonoNFM-Regular
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
+# font names for the official GitHub font
+# font_family      Monaspace Neon Var
+# italic_font      Monaspace Neon Var Italic
+# italic_font      Monaspace Neon Var
+# bold_font        Monaspace Neon Var Bold
+# bold_italic_font Monaspace Neon Var Bold Italic
+
+
+# (pkg: otf-monaspace-nerd) monaspace-nerd renames it to "Monaspice" names
+font_family      Monaspace Neon NF
+# font_family      MonaspiceNe Nerd Font Mono
+italic_font      Monaspace Neon NF
+# italic_font      MonaspiceNe Nerd Font Mono
+bold_font        Monaspace Neon NF
+# bold_font        MonaspiceNe Nerd Font Mono
+bold_italic_font Monaspace Neon NF
+# bold_italic_font MonaspiceNe Nerd Font Mono
 
 # (pkg: otf-monaspace-nerd) packaged under 1 family name
-font_features CommitMonoNFM    liga calt ss01 ss02 ss03 ss04 ss05 ss08
+font_features Monaspace Neon NF    liga calt ss01 ss02 ss03 ss04 ss05 ss08
 
 modify_font underline_thickness 50%
 # modify_font cell_height +2px
@@ -82,11 +95,3 @@ map ctrl+shift+f3 command_palette
 
 
 enable_audio_bell no
-
-
-# BEGIN_KITTY_FONTS
-font_family      family="CommitMono Nerd Font Mono"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-# END_KITTY_FONTS
