@@ -300,7 +300,9 @@ hl.config({
         -- remove cringe
         disable_hyprland_logo = true,
         -- remove cringe
-        disable_splash_rendering = false,
+        disable_splash_rendering = true,
+        -- remove cringe
+
         enable_swallow = true,
         enable_anr_dialog = false,
     },
