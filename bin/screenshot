@@ -1,1 +1,2 @@
 grim - | wl-copy
+notify-send "Screenshot copied to clipboard"

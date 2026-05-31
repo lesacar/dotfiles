@@ -1,2 +1,2 @@
-echo -n "$(cpu_avg_temp)   $(cpu_usg)"
+echo -n "$(cpu_usg)($(cpu_avg_temp))  "
 echo ""

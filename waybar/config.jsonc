@@ -4,26 +4,29 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 24, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 5, // Gaps between modules (4px)
+    "width": 0,
+    "gaps": 30,
+    "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
+    "fixed-center": false,
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/mode",
         "hyprland/scratchpad",
-        "hyprland/submap",
+        "hyprland/submap"
     ],
     "modules-center": [
         "hyprland/window"
     ],
     "modules-right": [
         "custom/gpu_info",
-        "pulseaudio",
         "custom/cpu_info",
         "custom/memory",
-        "network",
+        "pulseaudio",
+        /* "network", */
         "battery",
         "clock",
-        "tray",
+        "tray"
     ],
 
     "custom/cpu_info":
@@ -31,8 +34,7 @@
         "format": "{}",
         "tooltip": false,
         "interval": 2,
-        "exec": "cpu_stuff",
-        "format-icons": ["", "", ""]
+        "exec": "cpu_stuff"
     },
 
     "custom/gpu_info":
@@ -40,55 +42,41 @@
         "format": "{}",
         "tooltip": false,
         "interval": 2,
-        "exec": "NOUVEAU_TEMP",
-        "format-icons": ["", "", ""]
+        "exec": "NOUVEAU_TEMP"
     },
 
     "custom/memory":
     {
-        "format": "M: {} ",
+        /* "format": "{} ", */
+        "format": "{}",
         "return-type": "json",
         "tooltip": true,
         "interval": 2,
-        "exec": "waybar_real_memory_used_module",
-        "format-icons": ["", "", ""]
+        "exec": "waybar_real_memory_used_module"
     },
 
-    // Modules configuration
-    // "hyprland/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-   "hyprland/mode": {
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 30,
+        "icon": true
+    },
+
+     "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{name}"
+     },
+
+    "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "hyprland/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-   "tray": {
+    "tray": {
         // "icon-size": 21,
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        // "format-alt": "{:%Y-%m-%d}"
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "battery": {
         "states": {
@@ -96,49 +84,22 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{capacity}% {icon} ",
+        "format-full": "{capacity}% {icon} ",
+        "format-charging": "{capacity}%  ",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
    "network": {
-        "format-wifi": "({signalStrength}%) ",
-        "format-ethernet": "Ethernet ",
-        "tooltip-format": "{ipaddr} ({ifname}) via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "({signalStrength}%)  ",
+        "format-ethernet": "ETH ",
+        "tooltip-format": "{ipaddr} ({ifname}) via {gwaddr} ",
+        "format-linked": "{ifname} (No data connection - IP)",
+        "format-disconnected": "Disconnected ⚠ "
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": " ",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        // "on-click": "kitty alsamixer"
-    },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "format": "{volume}% "
+       // "on-click": "kitty alsamixer"
     },
 }

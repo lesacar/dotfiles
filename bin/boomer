@@ -1,3 +1,4 @@
 #! /bin/bash
 # grim -c - | swayimg - -f
 grim -g "$(slurp -d)" - | wl-copy
+notify-send "Selection copied to clipboard"

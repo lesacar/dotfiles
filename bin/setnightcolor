@@ -1,7 +1,0 @@
-#!/bin/bash
-if pgrep -x "gammastep" > /dev/null
-then
-    killall gammastep > /dev/null 2>&1 &
-else
-    gammastep -O 2500K &
-fi
