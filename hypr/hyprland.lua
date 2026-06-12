@@ -22,9 +22,10 @@ hl.config({
 
 hl.monitor({
     output   = "e-DP1",
-    mode     = "preferred",
+    mode     = "1920x1080@60",
     position = "auto",
-    scale    = "auto",
+    scale    = 1.5,
+    transform = 0,
 })
 
 hl.monitor({
@@ -354,6 +355,7 @@ hl.window_rule({
 hl.config({
     xwayland = {
         enabled = true,
+        force_zero_scaling = true,
     },
 })
 
